@@ -1,0 +1,39 @@
+<div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+    <div class="panel-body no-padding">
+        <table class="table table-striped">
+            <thead>
+            <tr><h2>Lista Utenti</tr>
+            <tr class="warning">
+                <th>#</th>
+                <th>Password</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Operations</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <form id="dataentry" action="edit_user.php" method="POST" >
+                <fieldset>
+                    <input type="hidden" name="page" value="3" />
+                    <input type="hidden" name="id" value="<[id]>"/> <!-- Attento a sta linea -->
+                    <[foreach]>
+                    <tr>
+                        <td><[username]></td>
+                        <td><[password]></a></td>
+                        <td><[name]></td>
+                        <td><[surname]></td>
+                        <td><[email]></td>
+                        <td><p align="left"><[category]></p></td>
+                        <td><a href="edit_user.php?id=<[id]>&page=1"><p align="left">Edit</p></a></td>
+                    </tr>
+                    <[/foreach]>
+                    <button onclick="myFunction()">Try it</button>
+                    <td><a href="edit_user.php?id=<[id]>&page=3">Delete</a></td>
+                </fieldset>
+            </form>
+            </tbody>
+        </table>
+    </div>
+</div>

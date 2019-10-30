@@ -1,0 +1,121 @@
+<script>
+    $().ready(function(){
+
+        $('input, textarea').focus(function(){
+            $(this).css({
+                'border': '1px solid #9999ff',
+                'box-shadow': '0 0 2px 2px rgba(0, 0, 255, 0.3)'
+            });
+        });
+        $('input, textarea').blur(function(){
+            $(this).css({
+                'border': '1px solid gray',
+                'box-shadow': '0 0 0px 0px'
+            });
+        });
+
+        $('.mandatory')
+            .parent()
+            .children(':first-child')
+            .html(function(){
+                return $(this).html()+' <span>*</span>';
+            });
+
+        $('input.submit').click(function(){
+            var
+                validated = true;
+
+            $('.mandatory').each(function(){
+
+                if ($(this).val() == "") {
+                    validated = false;
+                    /*alert('Please enter '+$(this)
+                     .parent()
+                     .children(':first-child')
+                     .html().slice(0,-1));*/
+
+                    alert($(this).attr('errormessage'));
+                };
+            });
+
+            if (validated) {
+                $('form#dataentry').submit();
+            } else {
+                return false;
+            }
+
+        });
+
+        if ('<[message]>' != '') {
+
+            $("body").prepend("<div id='message' style='font-family: arial; color: rgb(6, 217, 149); opacity: 1; position: absolute;z-index: 10; width: 300px; height: 80px; border-radius: 10px; background-color: #88ddff; right: 20px; top: 60px; padding: 10px;'><div>");
+
+            var message;
+
+            switch('<[message]>') {
+                case "OK":
+                    $('#message').css({'background-color': '#ddffdd', 'color': '#44aa44' });
+                    message = '<strong>Insert accepted!</strong><br><br>The transaction succeded!';
+                    break;
+
+                case "error":
+
+                case "KO":
+                    $('#message').css({'background-color': '#ffdddd', 'color': '#aa4444' });
+                    message = '<strong>Warning</strong><br><br>There was a problem!';
+                    break;
+            }
+
+            $('#message')
+                .html(message)
+                .hide()
+                .fadeIn()
+                .click(function(){
+                    $(this).fadeOut();
+                });
+        }
+    });
+</script>
+
+<!--banner-->
+<div class="banner">
+    <h2>
+        <a href="login.php">Home</a>
+        <i class="fa fa-angle-right"></i>
+        <span>Edit product</span>
+    </h2>
+</div>
+<!--//banner-->
+<div class="grid-form">
+    <div class="grid-form1">
+        <h3 id="forms-horizontal">Edit product form</h3>
+            <table id="product"  class="hover" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>#ID</th>
+                        <th>Name</th>
+                        <th>Product Line</th>
+                        <th>Year</th>
+                        <th>Movement</th>
+                        <th>Functions</th>
+                        <th>Operation</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <[foreach]>
+                        <tr>
+                            <td><[id]></td>
+                            <td><[name]></td>
+                            <td><[product_line]></td>
+                            <td><[year]></td>
+                            <td><[movement]></td>
+                            <td><[functions]></td>
+                            <td><a href="edit_product.php?id=<[id]>&page=1"><button>Edit</button></a></td>
+                            <td><a href="edit_product.php?id=<[id]>&page=3"><button onclick="myFunction()">Delete</button></a></td>
+                        </tr>
+                    <[/foreach]>
+                </tbody>
+            </table>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="panel panel-warning" data-widget="{&quot;draggable&quot;: &quot;false&quot;}" data-widget-static="">
+    <div class="panel-body no-padding">
+        <table class="table table-striped">
+            <thead>
+            <tr><h2>Product</tr>
+            <tr class="warning">
+                <th>#</th>
+                <th>Name</th>
+                <th>Brand</th>
+                <th>Color</th>
+                <th>Size</th>
+                <th>Availability</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Operations</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <form id="dataentry" action="edit_product.php" method="POST" >
+                <fieldset>
+                    <input type="hidden" name="page" value="1" />
+                    <input type="hidden" name="id" value="<[id]>" /> <!-- Attento a sta fottuta linea -->
+                    <[foreach]>
+                    <tr>
+                        <td><[watch_id]></td>
+                        <td><[name]></a></td>
+                        <td><[brand]></td>
+                        <td><[color]></td>
+                        <td><[size]></td>
+                        <td><[availability]></td>
+                        <td><[price]> €</td>
+                        <td><p align="left"><[category]></p></td>
+                        <td><a href="edit_product.php?id=<[id]>&page=1"><p align="left">Edit</p></a></td>
+                        <td><a href="edit_product.php?id=<[id]>&page=3">Delete</a></td>
+                    </tr>
+                    <[/foreach]>
+                </fieldset>
+            </form>
+            </tbody>
+        </table>
+    </div>
+</div>

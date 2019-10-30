@@ -1,0 +1,42 @@
+<!--banner-->
+    <div class="banner">
+        <h2>
+            <a href="login.php">Home</a>
+            <i class="fa fa-angle-right"></i>
+            <span>Manage user permission</span>
+        </h2>
+    </div>
+    <!--//banner-->
+
+    <div class="grid-form">
+        <div class="grid-form1">
+            <h3 id="forms-horizontal">Edit user permission</h3>
+                <table id="product"  class="hover" width="100%" cellspacing="0" >
+                    <thead>
+                        <tr>
+                            <td>Username</td>
+                            <td>#ID</td>
+                            <td>Name</td>
+                            <td>Surname</td>
+                            <td>Email</td>
+                            <td>Password</td>
+                            <td>Operations</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <[foreach]>
+                            <tr>
+                                <td><[username]></td>
+                                <td><[id]></td>
+                                <td><[name]></td>
+                                <td><[surname]></td>
+                                <td><[email]></td>
+                                <td><[password]></td>
+                                <td><a href="edit_user_perm.php?id=<[id]>&page=1"><button>Edit permission</button></a></td>
+                            </tr>
+                        <[/foreach]>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
