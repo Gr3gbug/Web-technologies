@@ -1,0 +1,30 @@
+<!--product-starts-->
+<div class="product">
+  <center><h1>Prodotti in offerta</h1></center>
+  <div class="container">
+    <div class="product-top">
+          <div class="product-one">
+          <[foreach]>
+            <div class="col-md-3 product-left">
+              <div class="product-main simpleCart_shelfItem">
+                <input type="hidden" id="watch_id" name="watch_id" value="<[watch_id]>" />
+                <a href="product.php?page=0&id=<[watch_id]>" class="mask">
+                    <img style="width: 125px; height: 200px" class="img-responsive zoom-img" type="file" src="skins/images/product/<[image]>" />
+                </a>
+                <div class="product-bottom">
+                    <p><[name]></p>
+                  <p>Explore Now</p>
+                  <h4><a class="item_add" href="#"><i></i></a> <span class=" item_price"><[price]> €</span></h4>
+                </div>
+                <div class="srch">
+                  <span><[percentage]> %</span>
+                </div>
+              </div>
+            </div>
+          <[/foreach]>
+          </div>
+
+    </div>
+  </div>
+</div>
+<!--product-end-->

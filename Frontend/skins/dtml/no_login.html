@@ -1,0 +1,40 @@
+<!--start-breadcrumbs-->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="breadcrumbs-main">
+            <ol class="breadcrumb">
+                <li><a href="index.php">Home</a></li>
+                <li class="active">Login</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<!--end-breadcrumbs-->
+<!--register-starts-->
+<div class="register">
+    <div class="container">
+        <form name="myForm" class="form-horizontal" action="login.php" method="post">
+            <div class="register-top heading">
+                <h2>LOGIN</h2>
+            </div>
+            <div class="register-main">
+                <div class="col-md-6 account-left">
+                    <input type="hidden" name="page" value="1" />
+                    <input placeholder="Username" type="text" tabindex="1" name="username" id="username" required>
+                    <input placeholder="Password" type="password" tabindex="2" name="password" id="password" required>
+                    <p style="font-size: x-large; color: red">You must logged in to do this!</p>
+                </div>
+                <div class="col-md-6 account-right account-left">
+                    <h3>New User? Create an Account</h3>
+                    <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+                    <a href="register.php">Create an Account</a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="address submit">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+    </div>
+</div>
+<!--register-end-->

@@ -1,0 +1,55 @@
+<!--start-breadcrumbs-->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="breadcrumbs-main">
+            <ol class="breadcrumb">
+                <li><a href="index.php">Home</a></li>
+                <li class="active">View Orders</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<!--end-breadcrumbs-->
+
+<!--product-starts-->
+<div class="product">
+    <center><h1 style="text-transform: uppercase;">Purchase info</h1></center>
+    <div class="container" id="my_container">
+        <div class="container">
+            <br><br>
+            <div class="list">
+                <[foreach]>
+                <div class="container">
+                    <div class="breadcrumbs-main">
+                        <form name="myForm" class="form-horizontal" action="my_orders.php" method="post">
+                            <input type="hidden" name="page" id="page" value="1" />
+                            <input type="hidden" name="purchase_id" id="purchase_id" value="<[purchase_id]>" />
+                            <div class="col-md-6 account-left">
+                                <p style="color: #0d0d0d; font-size: 14px">Recipient: <b><[username]></b></p>
+                                <p style="color: #0d0d0d; font-size: 14px">Data di conferma: <b><[confirm_date]></b></p>
+                                <p style="color: #0d0d0d; font-size: 14px">ID Ordine: <b><[purchase_id]></b></p>
+                            </div>
+                            <div class="col-md-6 account-left">
+                                <p style="color: #0d0d0d; font-size: 14px">Totale spesa: <b><[total]> $</b></p>
+                                <p style="color: #0d0d0d; font-size: 14px">Stato della spedizione: <b><[status]></b></p>
+                                <input type="submit" style="background-color: #73b6e1;border: none;color: white;text-align: center;" value="View Details" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- -end-->
+                <[/foreach]>
+            </div>
+        </div>
+        <ul class="pagination"></ul>
+    </div>
+</div>
+<!--product-end-->
+
+<script>
+    var monkeyList = new List('my_container', {
+        valueNames: ['my_name'],
+        page: 3,
+        pagination: true
+    });
+</script>

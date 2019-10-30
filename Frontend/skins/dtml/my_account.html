@@ -1,0 +1,133 @@
+<!--start-breadcrumbs-->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="breadcrumbs-main">
+            <ol class="breadcrumb">
+                <li><a href="index.php">Home</a></li>
+                <li class="active">My Account</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<!--end-breadcrumbs-->
+<!--Account info -starts-->
+<div class="register">
+    <div class="container">
+            <div class="register-top heading">
+                <h2>ACCOUNT INFO</h2>
+            </div>
+            <div class="register-main">
+                <div class="col-md-4 account-left">
+                    <form name="myForm" class="form-horizontal" action="my_account.php" method="post">
+                        <input type="hidden" name="page" id="page" value="1" />
+                        <input type="hidden" name="id" id="id" value="<[id]>" />
+                        <!-- Here Description -->
+                        <div class="breadcrumbs">
+                            <div class="container">
+                                <div class="breadcrumbs-main">
+                                    <div class="col-md-6 account-left">
+                                        <p style="color: #0d0d0d; font-size: 14px">Name: <b><[name]></b></p>
+                                        <p style="color: #0d0d0d; font-size: 14px">Email: <b><[email]></b></p>
+                                        <p style="color: #0d0d0d; font-size: 14px">Gender: <b><[sex]></b></p>
+                                    </div>
+                                    <div class="col-md-6 account-left">
+                                        <p style="color: #0d0d0d; font-size: 14px">Surname: <b><[surname]></b></p>
+                                        <p style="color: #0d0d0d; font-size: 14px">Username: <b><[username]></b></p>
+                                    </div>
+                                </div>
+                                <!-- Edit Button -->
+                                <div class="address submit">
+                                    <input type="submit" value="Edit account" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+    </div>
+</div>
+<!--Account info -end-->
+<!-- Account address info -starts-->
+<div class="register">
+    <div class="container">
+        <div class="register-top heading">
+            <h2>YOUR MAIN ADDRESS</h2>
+        </div>
+        <div class="register-main">
+            <div class="col-md-4 account-left">
+                <form name="myForm2" class="form-horizontal" action="my_account.php" method="post">
+                    <input type="hidden" name="page" id="page" value="3" />
+                    <input type="hidden" name="address_id" id="address_id" value="<[address_id]>"/>
+                    <input type="hidden" name="id" id="id" value="<[id]>" />
+                    <!-- Here Description -->
+                    <div class="breadcrumbs">
+                        <div class="container">
+                            <div class="breadcrumbs-main">
+                                <div class="col-md-6 account-left">
+                                    <p style="color: #0d0d0d; font-size: 14px">Country: <b><[country]></b></p>
+                                    <p style="color: #0d0d0d; font-size: 14px">Region: <b><[region]></b></p>
+                                    <p style="color: #0d0d0d; font-size: 14px">City: <b><[city]></b></p>
+                                </div>
+                                <div class="col-md-6 account-left">
+                                    <p style="color: #0d0d0d; font-size: 14px">Zip Code: <b><[zip_code]></b></p>
+                                    <p style="color: #0d0d0d; font-size: 14px">Address: <b><[address]></b></p>
+                                </div>
+                            </div>
+                            <!-- Edit Button -->
+                            <div class="address submit">
+                                <input type="submit" value="Edit address" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a href="my_account.php?page=5"><input value="Add new" type="button" style="background-color: #73b6e1;border: none;color: white;padding: 6px 20px;text-align: center;display: inline-block; font-family:Helvetica Neue;" /></a>
+                <a href="my_account.php?page=7"><input value="View all" type="button" style="background-color: #73b6e1;border: none;color: white;padding: 6px 20px;text-align: center;display: inline-block; font-family:Helvetica Neue;" /></a>
+                <a href="my_account.php?page=15"><input value="Choose Default" type="button" style="background-color: #73b6e1;border: none;color: white;padding: 6px 20px;text-align: center;display: inline-block; font-family:Helvetica Neue;" /></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!-- Account address info -end-->
+<!-- Account card info -starts-->
+<div class="register">
+    <div class="container">
+        <div class="register-top heading">
+            <h2>REGISTERED CARD</h2>
+        </div>
+        <div class="register-main">
+            <div class="col-md-4 account-left">
+                <form name="myForm3" class="form-horizontal" action="my_account.php" method="post">
+                    <input type="hidden" name="page" id="page" value="12" />
+                    <input type="hidden" name="card_id" id="card_id" value="<[card_id]>" />
+                    <!-- Here Description -->
+                    <div class="breadcrumbs">
+                        <div class="container">
+                            <div class="breadcrumbs-main">
+                                <div class="col-md-6 account-left">
+                                    <p style="color: #0d0d0d; font-size: 14px">Owner: <b><[owner]></b></p>
+                                    <p style="color: #0d0d0d; font-size: 14px">Card Number: <b><[card_number]></b></p>
+                                    <p style="color: #0d0d0d; font-size: 14px">Expire date: <b><[expire]></b></p>
+                                </div>
+                                <div class="col-md-6 account-left">
+                                    <p style="color: #0d0d0d; font-size: 14px">Card ccv: <b><[ccv]></b></p>
+                                    <p style="color: #0d0d0d; font-size: 14px">Your ID card: <b><[card_id]></b></p>
+                                </div>
+                            </div>
+                            <!-- Edit Button -->
+                            <div class="address submit">
+                                <input type="submit" value="Edit card" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <a href="my_account.php?page=9"><input value="Add new" type="button" style="background-color: #73b6e1;border: none;color: white;padding: 6px 20px;text-align: center;display: inline-block; font-family:Helvetica Neue;" /></a>
+                <a href="my_account.php?page=11"><input value="View all" type="button" style="background-color: #73b6e1;border: none;color: white;padding: 6px 20px;text-align: center;display: inline-block; font-family:Helvetica Neue;" /></a>
+                <a href="my_account.php?page=17"><input value="Choose Default" type="button" style="background-color: #73b6e1;border: none;color: white;padding: 6px 20px;text-align: center;display: inline-block; font-family:Helvetica Neue;" /></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!-- Account card info -starts-->

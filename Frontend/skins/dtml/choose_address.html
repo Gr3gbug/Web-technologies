@@ -1,0 +1,55 @@
+<!--start-breadcrumbs-->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="breadcrumbs-main">
+            <ol class="breadcrumb">
+                <li><a href="index.php">Home</a></li>
+                <li class="active"><a href="my_account.php">My Account</a></li>
+                <li class="active">View Addesses</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<!--end-breadcrumbs-->
+<!-- Account address info -starts-->
+<div class="register">
+    <div class="container">
+        <div class="register-top heading">
+            <h2>YOUR MAIN ADDRESS</h2>
+        </div>
+        <[foreach]>
+        <div class="register-main">
+            <div class="col-md-4 account-left">
+                <form name="myForm2" class="form-horizontal" action="my_account.php" method="post">
+                    <input type="hidden" name="page" id="page" value="16" />
+                    <input type="hidden" name="address_id" id="address_id" value="<[address_id]>"/>
+                    <input type="hidden" name="id" id="id" value="<[id]>" />
+                    <!-- Here Description -->
+                    <div class="breadcrumbs">
+                        <div class="container">
+                            <div class="breadcrumbs-main">
+                                <div class="col-md-6 account-left">
+                                    <p style="color: #0d0d0d; font-size: 14px">Country: <b><[country]></b></p>
+                                    <p style="color: #0d0d0d; font-size: 14px">Region: <b><[region]></b></p>
+                                    <p style="color: #0d0d0d; font-size: 14px">City: <b><[city]></b></p>
+                                    <p style="color: #0d0d0d; font-size: 14px">Type: <b style="color: green"><[type]></b></p>
+                                </div>
+                                <div class="col-md-6 account-left">
+                                    <p style="color: #0d0d0d; font-size: 14px">Zip Code: <b><[zip_code]></b></p>
+                                    <p style="color: #0d0d0d; font-size: 14px">Address: <b><[address]></b></p>
+                                </div>
+                            </div>
+                            <!-- Edit Button -->
+                            <div class="address submit">
+                                <input type="submit" value="Choose address" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <[/foreach]>
+    </div>
+</div>
+<!-- Account address info -end-->

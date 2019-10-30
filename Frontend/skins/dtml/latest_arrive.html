@@ -1,0 +1,24 @@
+<!--about-starts-->
+<div class="about">
+    <center><h1>Ultimi arrivi</h1></center>
+    <div class="container">
+        <div class="about-top grid-1">
+            <[foreach]>
+                <div class="col-md-4 about-left">
+                    <input type="hidden" id="watch_id" name="watch_id" value="<[watch_id]>" />
+                    <a href="product.php?page=0&id=<[watch_id]>" class="mask">
+                        <figure class="effect-bubba">
+                                <img style="width: 350px; height: 250px;" class="img-responsive" id="image" name="image" type="file" src="skins/images/product/<[image]>" readonly />
+                            <figcaption>
+                                <h2><[watch_name]></h2>
+                                <p>In sit amet sapien eros Integer dolore magna aliqua</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+            <[/foreach]>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!--about-end-->

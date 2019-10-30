@@ -1,0 +1,125 @@
+<script>
+
+    $().ready(function(){
+
+        $('input, textarea').focus(function(){
+            $(this).css({
+                'border': '1px solid #9999ff',
+                'box-shadow': '0 0 2px 2px rgba(0, 0, 255, 0.3)'
+            });
+        });
+        $('input, textarea').blur(function(){
+            $(this).css({
+                'border': '1px solid gray',
+                'box-shadow': '0 0 0px 0px'
+            });
+        });
+
+        $('.mandatory')
+            .parent()
+            .children(':first-child')
+            .html(function(){
+                return $(this).html()+' <span>*</span>';
+            });
+
+        $('input.submit').click(function(){
+            var
+                validated = true;
+
+            $('.mandatory').each(function(){
+
+                if ($(this).val() == "") {
+                    validated = false;
+                    /*alert('Please enter '+$(this)
+                     .parent()
+                     .children(':first-child')
+                     .html().slice(0,-1));*/
+
+                    alert($(this).attr('errormessage'));
+                };
+            });
+
+            if (validated) {
+                $('form#dataentry').submit();
+            } else {
+                return false;
+            }
+
+        });
+
+        if ('<[message]>' != '') {
+
+            $("body").prepend("<div id='message' style='font-family: arial; color: rgb(6, 217, 149); opacity: 1; position: absolute;z-index: 10; width: 300px; height: 80px; border-radius: 10px; background-color: #88ddff; right: 20px; top: 60px; padding: 10px;'><div>");
+
+            var message;
+
+            switch('<[message]>') {
+                case "OK":
+                    $('#message').css({'background-color': '#ddffdd', 'color': '#44aa44' });
+                    message = '<strong>Insert accepted!</strong><br><br>The transaction succeded!';
+                    break;
+
+                case "error":
+
+                case "KO":
+                    $('#message').css({'background-color': '#ffdddd', 'color': '#aa4444' });
+                    message = '<strong>Warning</strong><br><br>There was a problem!';
+                    break;
+            }
+
+            $('#message')
+                .html(message)
+                .hide()
+                .fadeIn()
+                .click(function(){
+                    $(this).fadeOut();
+                });
+        }
+    });
+</script>
+<!--start-ckeckout-->
+<div class="ckeckout">
+    <div class="container">
+        <div class="ckeck-top heading">
+            <!-- TITOLO -->
+        </div>
+        <div class="ckeckout-top">
+            <div class="cart-items">
+                <h3>My Shopping Bag (<[cart_obj]>)</h3>
+                <div class="in-check" >
+                    <ul class="unit">
+                        <li><span>Item</span></li>
+                        <li><span>Product Name</span></li>
+                        <li><span>Unit Price &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amount</span></li>
+                        <li><span>Delivery Details</span></li>
+                        <li> </li>
+                        <div class="clearfix"> </div>
+                    </ul>
+                    <[foreach]>
+                        <input type="hidden" id="id" name="id" value="<[id]>" />
+                        <input type="hidden" id="amount" name="amount" value="<[amount]>" />
+                        <ul class="cart-header">
+                            <li class="ring-in"><a href="product.php?page=0&id=<[id]>" ><img src="skins/images/product/<[image]>" class="img-responsive" alt=""></a>
+                            </li>
+                            <li><span class="name"><[watch_name]></span></li>
+                            <li><span class="cost">$ <[watch_price]> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <[amount]></span></li>
+                            <li><span>Free</span>
+                                <p>Delivered in 2-3 business days</p><br><br><br><br><br><br>
+                                <p><a href="cart.php?id=<[watch_id]>&page=1"><input style="float: right;background-color: red;border: none;color: white;padding: 6px 20px;text-align: center;display: inline-block;font-family: Helvetica Neue;" type="button" value="Delete" /></a></p>
+                            </li>
+                            <li></li>
+                            <div class="clearfix"></div>
+                        </ul>
+                    <[/foreach]>
+                    <form name="myForm" class="form-horizontal" action="cart.php" method="post">
+                        <input type="hidden" name="page" id="page" value="2" />
+                        <p style="float: right;font-size: 2em;color: #000;margin: 0 0 0 0;font-family: 'BreeSerif-Regular';">The temporary total is: $ <[totale]></p>
+                        <br><br><br>
+                        <p><input style="float: right;background-color: #73b6e1;border: none;color: white;padding: 6px 20px;text-align: center;display: inline-block;font-family: Helvetica Neue;" type="submit" value="Checkout" /></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end-ckeckout-->

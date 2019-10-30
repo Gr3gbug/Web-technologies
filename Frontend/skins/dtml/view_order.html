@@ -1,0 +1,79 @@
+<!--start-breadcrumbs-->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="breadcrumbs-main">
+            <ol class="breadcrumb">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="my_orders.php">My Orders</a></li>
+                <li class="active">View Single Order</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<!--end-breadcrumbs-->
+<!--Order info -starts-->
+<div class="register">
+    <div class="container">
+        <div class="register-top heading">
+            <h2>VIEW DETAIL INFO</h2>
+        </div>
+        <div class="register-main">
+            <div class="col-md-4 account-left">
+                <!-- Here Description -->
+                <div class="breadcrumbs">
+                    <div class="container">
+                        <div class="breadcrumbs-main">
+                            <input type="hidden" name="purchase_id" id="purchase_id" value="<[purchase_id]>" />
+                            <div class="col-md-6 account-left">
+                                <br>
+                                <h3>Purchase address info</h3>
+                                <p style="color: #0d0d0d; font-size: 14px">Recipient: <b><[name]> <[surname]></b></p>
+                                <p style="color: #0d0d0d; font-size: 14px">Email: <b><[email]></b></p>
+                                <p style="color: #0d0d0d; font-size: 14px">Address: <b><[country]>, <[region]>, <[city]>, <[zip_code]>, <[address]></b></p>
+                                <h3>Purchase payments info</h3>
+                                <br>
+                                <p style="color: #0d0d0d; font-size: 14px">Card Number: <b><[card_number]></b></p>
+                                <p style="color: #0d0d0d; font-size: 14px">Card Expire: <b><[card_expire]></b></p>
+                                <p style="color: #0d0d0d; font-size: 14px">Card Owner: <b><[card_owner]></b></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <!-- Test Prodotti -->
+        <div class="cart-items">
+            <h3>Bought Item(s) </h3>
+            <div class="in-check" >
+                <ul class="unit">
+                    <li><span>Item</span></li>
+                    <li><span>Product Name</span></li>
+                    <li><span>Unit Price &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amount</span></li>
+                    <li><span>Delivery Details</span></li>
+                    <li> </li>
+                    <div class="clearfix"> </div>
+                </ul>
+                <[foreach]>
+                <input type="hidden" id="watch_id" name="watch_id" value="<[watch_id]>" />
+                <input type="hidden" id="quantity" name="quantity" value="<[quantity]>" />
+                <ul class="cart-header">
+                    <li class="ring-in"><a href="product.php?page=0&id=<[id]>" ><img src="skins/images/product/<[image]>" class="img-responsive" alt=""></a>
+                    </li>
+                    <li><span class="name"><[product_name]></span></li>
+                    <li><span class="cost">$ <[prezzo]> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <[quantity]></span></li>
+                    <li><span>Free</span>
+                        <p>Delivered in 2-3 business days</p><br><br><br><br><br><br>
+                    </li>
+                    <li></li>
+                    <div class="clearfix"></div>
+                </ul>
+                <[/foreach]>
+            </div>
+        </div>
+        <!-- Test Prodotti -end-->
+
+    </div>
+</div>
+<!--Order info -end-->

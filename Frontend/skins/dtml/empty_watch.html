@@ -1,0 +1,55 @@
+<!--start-breadcrumbs-->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="breadcrumbs-main">
+            <ol class="breadcrumb">
+                <li><a href="index.php">Home</a></li>
+                <li class="active">View Product</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<!--end-breadcrumbs-->
+
+<!--product-starts-->
+<div class="product">
+    <center><h1 style="text-transform: uppercase;"><[gender]> watches</h1></center>
+    <div class="container" id="my_container">
+        <div class="container">
+            <br><br>
+            <input type="text" class="search" placeholder="Search in this space..." style="float:  right;" />
+            <br><br><br>
+            <p style="font-size: xx-large">Ops, there are not objects that you select!</p>
+            <div class="list">
+                <[foreach]>
+                <div class="col-md-3 product-left">
+                    <div class="product-main simpleCart_shelfItem">
+                        <input type="hidden" id="watch_id" name="watch_id" value="<[watch_id]>" />
+                        <a href="product.php?page=0&id=<[id]>" class="mask">
+                            <img style="width: 125px; height: 200px;" class="img-responsive zoom-img" id="image" name="image" type="file" src="skins/images/product/<[image]>" />
+                        </a>
+                        <div class="product-bottom">
+                            <p class="my_name"><[name]></p>
+                            <p>Explore Now</p>
+                            <h4><a class="item_add" href="#"><i></i></a> <span class=" item_price"><[price]> €</span></h4>
+                        </div>
+                        <div class="srch">
+                            <span><[percentage]> %</span>
+                        </div>
+                    </div>
+                </div>
+                <[/foreach]>
+            </div>
+        </div>
+        <ul class="pagination"></ul>
+    </div>
+</div>
+<!--product-end-->
+
+<script>
+    var monkeyList = new List('my_container', {
+        valueNames: ['my_name'],
+        page: 4,
+        pagination: true
+    });
+</script>
